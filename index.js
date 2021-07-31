@@ -17,4 +17,11 @@ const setupMap = (center) => {
     center: center,
     zoom: 15, // starting zoom
   });
+  map.addControl(new mapboxgl.NavigationControl());
+  map.addControl(
+    new MapboxDirections({
+      accessToken: mapboxgl.accessToken,
+    }),
+    "top-left"
+  );
 };
